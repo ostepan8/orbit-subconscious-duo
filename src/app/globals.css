@@ -41,3 +41,19 @@ body {
   color: var(--foreground);
   font-family: var(--font-geist-sans), system-ui, sans-serif;
 }
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes highlightFlash {
+  0% { background-color: rgba(255, 92, 40, 0.25); }
+  30% { background-color: rgba(255, 92, 40, 0.15); }
+  100% { background-color: transparent; }
+}

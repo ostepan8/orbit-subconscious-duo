@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Orbit x Subconscious
+
+AI-powered deep research platform built for **MIT's Orbit Jetpack** system. Upload documentation, and let Subconscious agents perform deep research, generate verified citations, and deliver actionable recommendations.
+
+## What This Does
+
+1. **PDF Upload** — Drop in any Orbit Jetpack document (technical specs, research papers, mission briefs)
+2. **AI Deep Research** — Subconscious agents analyze the document, cross-reference sources, and surface key insights
+3. **Citations & Recommendations** — Receive a structured report with traceable citations and priority-ranked action items
+
+## Tech Stack
+
+- **Framework:** Next.js 16 (App Router, TypeScript)
+- **Styling:** Tailwind CSS v4 with Subconscious brand tokens
+- **AI Agents:** [Subconscious.dev](https://subconscious.dev) multi-agent platform
+- **Fonts:** Geist Sans & Geist Mono
+
+## Project Structure
+
+```
+src/
+├── app/
+│   ├── api/
+│   │   ├── upload/       # PDF upload endpoint (stub)
+│   │   ├── research/     # Research trigger & results (stub)
+│   │   └── citations/    # Citation retrieval & export (stub)
+│   ├── globals.css       # Brand CSS variables + Tailwind config
+│   ├── layout.tsx        # Root layout (Navbar + Footer)
+│   └── page.tsx          # Homepage
+├── components/
+│   ├── layout/           # Navbar, Footer
+│   ├── sections/         # Hero, HowItWorks, Features, AgentShowcase,
+│   │                       ResearchPreview, UploadCTA
+│   └── ui/               # Button, Card, Badge, SectionHeading
+├── constants/
+│   └── colors.ts         # Brand color constants
+├── hooks/
+│   └── useResearch.ts    # Research pipeline hook (stub)
+├── lib/
+│   ├── pdf.ts            # PDF processing utilities (stub)
+│   └── subconscious.ts   # Subconscious SDK integration (stub)
+└── types/
+    └── index.ts          # TypeScript interfaces
+```
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Roadmap
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- [ ] Wire up PDF upload with drag-and-drop
+- [ ] Integrate Subconscious SDK for agent orchestration
+- [ ] Implement real-time agent status tracking (SSE/WebSocket)
+- [ ] Build citation generation pipeline
+- [ ] Add recommendation engine with priority ranking
+- [ ] Build research results dashboard page
+- [ ] Add export functionality (PDF reports, BibTeX)
+- [ ] Add authentication and user sessions
+- [ ] Mobile responsive navigation
+- [ ] Add analytics and event tracking
 
-## Learn More
+## Environment Variables
 
-To learn more about Next.js, take a look at the following resources:
+```env
+# TODO: Add these when integrating
+SUBCONSCIOUS_API_KEY=     # Subconscious.dev API key
+# NEXT_PUBLIC_APP_URL=    # Public app URL for callbacks
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Brand Colors
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Color | Hex | Usage |
+|-------|-----|-------|
+| Primary Black | `#101820` | Text, dark backgrounds |
+| Primary Orange | `#FF5C28` | CTAs, accents, brand identity |
+| Light Orange | `#FFC0A4` | Hover states, light accents |
+| Teal | `#3ED0C3` | Secondary actions, highlights |
+| Green | `#B5E800` | Success states, agent status |
+| Graphite Gray | `#5A5A5A` | Body text, muted elements |
+| Background Cream | `#F0F3EF` | Page background (light mode) |
